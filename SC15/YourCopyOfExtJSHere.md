@@ -1,0 +1,1 @@
+Put your copy of ExtJS in this folder.  Put your legal copy of ExtJS5.x in a folder called ext in this workspace.
