@@ -1,5 +1,22 @@
-[
-    {
-        "path":"specs/login/testLoginPanel.js"
+{
+    "description" : "Nightly build test suite",
+    "specs" : [
+        {
+            "path" : "specs/validator/testHostIPAddressValidator.js"
+        },
+        {
+            "path" : "specs/login/testLoginPanel.js"
+        }
+    ],
+    "testMetadata" : {
+        "ipAddressValidator" : {
+            "classA" : true,
+            "classB" : true,
+            "classC" : true,
+            "classD" : true,
+            "classE" : true,
+            "loopback" : true,
+            "linkLocal" : true
+        }
     }
-]
+}

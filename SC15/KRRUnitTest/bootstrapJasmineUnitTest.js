@@ -1527,7 +1527,8 @@ Ext.Microloader = Ext.Microloader || (function () {
                             Microloader.load(manifest);
                         }
                     });
-                } else {
+                }
+                else {
                     Microloader.load(manifest);
                 }
             },
@@ -1584,10 +1585,14 @@ Ext.Microloader = Ext.Microloader || (function () {
                 if (loadOrder) {
                     manifest.loadOrderMap = loadOrderMap;
                 }
-
-                var arr = css.concat(js);
+                var arr = [];
                 if(manifest["specs"]) {
                     arr = arr.concat(manifest["specs"]);
+                    arr = arr.concat(css);
+                    arr = arr.concat(js);
+                }
+                else {
+                    arr = css.concat(js);
                 }
                 loadResources(arr, true);
             },

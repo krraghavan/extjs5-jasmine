@@ -1,6 +1,7 @@
 
 var KRR = KRR || {};
 KRR.API = KRR.API || {};
+
 describe("Unit tests for Login Panel", function() {
 
     beforeAll(function() {
