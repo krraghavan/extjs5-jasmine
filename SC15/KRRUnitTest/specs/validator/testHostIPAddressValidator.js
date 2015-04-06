@@ -88,17 +88,17 @@ KRR.jasmineSpecs.addSpec(function() {
         describe("Loopback address host IP validation [" + loopbackData.startIP + " - " + loopbackData.endIP + "]", function () {
             randomLoopbackAddress = ipu.randomIPGenerator(loopbackData);
             invalidResult["message"] = validator.loopbackNotAllowed;
-            _it("Must validate the first address for a Class E network [" + loopbackData.startIP + "]", loopbackData.startIP, invalidResult);
-            _it("Must validate the last address for a Class E network [" + loopbackData.endIP + "]", loopbackData.endIP, invalidResult);
-            _it("Must validate a random Class E network IP address  [" + randomLoopbackAddress + "]", randomLoopbackAddress, invalidResult);
+            _it("Must validate the first loopback address [" + loopbackData.startIP + "]", loopbackData.startIP, invalidResult);
+            _it("Must validate the last loopback address [" + loopbackData.endIP + "]", loopbackData.endIP, invalidResult);
+            _it("Must validate a random loopback address [" + randomLoopbackAddress + "]", randomLoopbackAddress, invalidResult);
         });
 
         describe("Link local address host IP validation [" + loopbackData.startIP + " - " + loopbackData.endIP + "]", function () {
             randomLinkLocalAddress = ipu.randomIPGenerator(linkLocalData);
             invalidResult["message"] = validator.linkLocalNotAllowed;
-            _it("Must validate the first address for a Class E network [" + linkLocalData.startIP + "]", linkLocalData.startIP, invalidResult);
-            _it("Must validate the last address for a Class E network [" + linkLocalData.endIP + "]", linkLocalData.endIP, invalidResult);
-            _it("Must validate a random Class E network IP address  [" + randomLinkLocalAddress + "]", randomLinkLocalAddress, invalidResult);
+            _it("Must validate the first link local address[" + linkLocalData.startIP + "]", linkLocalData.startIP, invalidResult);
+            _it("Must validate the last link local address [" + linkLocalData.endIP + "]", linkLocalData.endIP, invalidResult);
+            _it("Must validate a random link local address  [" + randomLinkLocalAddress + "]", randomLinkLocalAddress, invalidResult);
         });
     });
 });
