@@ -1515,7 +1515,7 @@ Ext.Microloader = Ext.Microloader || (function () {
                         var suite = Microloader.gup("suite");
                         __SUITEMETADATA = {};
                         if(suite) {
-                            Boot.fetch("suites/" + suite + ".json", function(spec) {
+                            Boot.fetch("suites/" + suite + ".json?dc="+ new Date().getTime(), function(spec) {
                                 __SUITEMETADATA = JSON.parse(spec.content);
                                 __SUITEMETADATA["specs"] = __SUITEMETADATA["specs"] || [];
                                 manifest["specs"] = __SUITEMETADATA["specs"];

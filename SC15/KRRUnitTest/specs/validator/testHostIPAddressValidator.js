@@ -76,14 +76,15 @@ KRR.jasmineSpecs.addSpec(function() {
             _it("Must validate the last address for a Class D network [" + classDData.endIP + "]", classDData.endIP, invalidResult);
             _it("Must validate a random Class D network IP address  [" + randomClassDIP + "]", randomClassDIP, invalidResult);
         });
-
-        describe("Class E network host IP validation [" + classEData.startIP + " - " + classEData.endIP + "]", function () {
-            randomClassEIP = ipu.randomIPGenerator(classEData);
-            invalidResult["message"] = validator.classENotAllowed;
-            _it("Must validate the first address for a Class E network [" + classEData.startIP + "]", classEData.startIP, invalidResult);
-            _it("Must validate the last address for a Class E network [" + classEData.endIP + "]", classEData.endIP, invalidResult);
-            _it("Must validate a random Class E network IP address  [" + randomClassEIP + "]", randomClassEIP, invalidResult);
-        });
+        if(__SUITEMETADATA["testMetadata"]["ipAddressValidator"]["classE"] === true) {
+            describe("Class E network host IP validation [" + classEData.startIP + " - " + classEData.endIP + "]", function () {
+                randomClassEIP = ipu.randomIPGenerator(classEData);
+                invalidResult["message"] = validator.classENotAllowed;
+                _it("Must validate the first address for a Class E network [" + classEData.startIP + "]", classEData.startIP, invalidResult);
+                _it("Must validate the last address for a Class E network [" + classEData.endIP + "]", classEData.endIP, invalidResult);
+                _it("Must validate a random Class E network IP address  [" + randomClassEIP + "]", randomClassEIP, invalidResult);
+            });
+        }
 
         describe("Loopback address host IP validation [" + loopbackData.startIP + " - " + loopbackData.endIP + "]", function () {
             randomLoopbackAddress = ipu.randomIPGenerator(loopbackData);
