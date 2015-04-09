@@ -26,9 +26,9 @@ Ext.define("KRR.view.login.LoginPanel", {
         me.items = [
             {
                 xtype: 'component',
-                height: 55,
                 hideMode: 'visibility',
                 itemId: 'errorMsg',
+                style : 'color:red;margin-bottom:5px;line-height:20px;',
                 hidden: true,
                 bind: {
                     visible: "{isLoginSuccessful}",

@@ -10,8 +10,12 @@ Ext.define('KRR.API', {
     doLogin : function(params, cbFn, scope) {
         var userName = params["username"],
             password = params["password"];
-        /**
-         * Not shown - put your actual login logic here.
-         */
+
+        if(userName === password) {
+            Ext.callback(cbFn, scope, [true, '']);
+        }
+        else {
+            Ext.callback(cbFn, scope, [false, 'Invalid username or password']);
+        }
     }
 });
